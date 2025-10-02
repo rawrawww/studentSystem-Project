@@ -7,7 +7,8 @@ class Student(db.Model):
     fullname = db.Column(db.String(50), nullable=False)
     age = db.Column(db.Integer, nullable=False)
     year= db.Column(db.String(10), nullable=False)
-    hours = db.Column(db.Float, default=0.0)
+    hours = db.Column(db.Float, nullable=False, default=0)
+    
 
     # relationships
     volunteer_logs = db.relationship('VolunteerRecord', back_populates='student', lazy=True)
@@ -23,11 +24,11 @@ class Student(db.Model):
         self.year=year
         
     def set_password(self, password):
-        """Create hashed password."""
+        
         self.password = generate_password_hash(password)
     
     def check_password(self, password):
-        """Check hashed password."""
+       
         return check_password_hash(self.password, password)
     
     def to_json(self):

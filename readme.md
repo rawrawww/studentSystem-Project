@@ -186,3 +186,16 @@ If you are running into errors in gitpod when updateding your github actions fil
 ## Database Issues
 
 If you are adding models you may need to migrate the database with the commands given in the previous database migration section. Alternateively you can delete you database file.
+
+## STUDENT COMMANDS 
+Create a student object: flask student create [full name,age,year(as string)]
+Student request hours: flask student request [id, hours]
+View Accolades: flask student accolades
+View leaderboard: flask student leaderboard
+
+
+## STAFF COMMANDS
+Create staff object: flask staff create [username, department,password]
+View Student requests: flask staff view
+Confirm student request: flask staff confirm [student id]
+Log student Hours: [staff id, student id, hours, description]

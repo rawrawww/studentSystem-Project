@@ -13,6 +13,12 @@ class Accolade(db.Model):
         self.threshold=threshold
         self.description = description
 
-   
+    def to_json(self):
+     return {
+        "id": self.id,
+        "title": self.title,
+        "threshold": self.threshold,
+        "description": self.description
+    }
 
     
